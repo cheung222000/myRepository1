@@ -18,7 +18,7 @@ terraform {
 
 resource "azurerm_resource_group" "example" {
   name     = "example-resources5"
-  location = "North Europe"
+  location = "UK South"
 }
 
 resource "azurerm_virtual_network" "example" {
