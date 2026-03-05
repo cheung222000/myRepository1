@@ -65,7 +65,7 @@ resource "azurerm_virtual_machine" "example" {
     name              = "example-os-disk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
-    managed_disk_type = "Standard_D2lds_v6"
+    managed_disk_type = "Standard_LRS"
   }
 
   os_profile {
