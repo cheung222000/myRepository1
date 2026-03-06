@@ -5,7 +5,7 @@ provider "azurerm" {
     }
   }
 }
-
+/*
 terraform {
   backend "azurerm" {
     resource_group_name  = "terraform-rg"
@@ -14,7 +14,7 @@ terraform {
     key                  = "terraform.tfstate"
   }
 }
-
+*/
 /*
 terraform {
   backend "azurerm" {
