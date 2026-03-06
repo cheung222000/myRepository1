@@ -22,7 +22,7 @@ variable "prefix" {
 
 resource "azurerm_resource_group" "myAzureResourceGroup1" {
   name     = "${var.prefix}-resources"
-  location = "West Europe"
+  location = var.location
 }
 
 resource "azurerm_virtual_network" "myAzureVirtualNetwork1" {
