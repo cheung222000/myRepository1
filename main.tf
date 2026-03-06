@@ -15,7 +15,7 @@ terraform {
     key                  = "terraform.tfstate"
   }
 }*/
-
+/*
 variable "prefix" {
   default = "tfvmex"
 }
@@ -50,3 +50,4 @@ resource "azurerm_network_interface" "myAzureNetworkInterface1" {
     private_ip_address_allocation = "Dynamic"
   }
 }
+*/
