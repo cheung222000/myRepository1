@@ -1,5 +1,5 @@
 variable "location" {
-  default = "West Europe"
+  default = "UK South"
 }
 
 variable "prefix" {
