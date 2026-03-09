@@ -9,7 +9,7 @@ terraform {
     subscription_id = "32b98b63-700f-4c73-a4fb-b7f4b5a41f5e"
     tenant_id       = "2ba54d41-d4ef-4dc5-bf19-e33e2ec7b5dd"
     client_id       = "dff6e629-2143-448c-bbea-4eea2c297729"
-    client_secret   = var.ARM_CLIENT_SECRET
+    client_secret   = var.client_secret
     resource_group_name  = "terraform-rg"
     storage_account_name = "tfstate889243219119"
     container_name       = "tfstate"
@@ -21,7 +21,7 @@ provider "azurerm" {
   subscription_id = "32b98b63-700f-4c73-a4fb-b7f4b5a41f5e"
   tenant_id       = "2ba54d41-d4ef-4dc5-bf19-e33e2ec7b5dd"
   client_id       = "dff6e629-2143-448c-bbea-4eea2c297729"
-  client_secret   = var.ARM_CLIENT_SECRET
+  client_secret   = var.client_secret
 
   features {}
 }
