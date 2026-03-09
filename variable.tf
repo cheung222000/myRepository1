@@ -6,5 +6,5 @@ variable "prefix" {
   default = "tfvmex"
 }
 
-variable "client_secret" {
+variable "clientSecret" {
 }
