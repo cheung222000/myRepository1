@@ -15,8 +15,9 @@ provider "azurerm" {
     }
   }
 }
-/*
+
 terraform {
+  subscription_id = "32b98b63-700f-4c73-a4fb-b7f4b5a41f5e"
   backend "azurerm" {
     resource_group_name  = "terraform-rg"
     storage_account_name = "tfstate889243219119"
@@ -24,7 +25,7 @@ terraform {
     key                  = "terraform.tfstate"
   }
 }
-*/
+
 /*
 terraform {
   backend "azurerm" {
