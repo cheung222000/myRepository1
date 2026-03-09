@@ -11,12 +11,6 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
-    env:
-      ARM_CLIENT_ID: ${{ secrets.clientId }}
-      ARM_CLIENT_SECRET: ${{ secrets.clientSecret }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
-      ARM_TENANT_ID: ${{ secrets.tenantId }}
       
     steps:
       - name: Checkout repository
@@ -38,9 +32,9 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-      - name: Terraform Apply
-        if: github.event_name == 'push'
-        run: terraform apply -auto-approve
+      #- name: Terraform Apply
+      #  if: github.event_name == 'push'
+      #  run: terraform apply -auto-approve
         
-      - name: Terraform destroy
-        run: terraform destroy -auto-approve
+      #- name: Terraform destroy
+      #  run: terraform destroy -auto-approve
