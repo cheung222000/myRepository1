@@ -15,16 +15,17 @@ provider "azurerm" {
 
   features {}
 }
-/*test
+
 terraform {
   backend "azurerm" {
+    subscription_id = "32b98b63-700f-4c73-a4fb-b7f4b5a41f5e"
     resource_group_name  = "terraform-rg"
     storage_account_name = "tfstate889243219119"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
 }
-*/
+
 /*
 terraform {
   backend "azurerm" {
