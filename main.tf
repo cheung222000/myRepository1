@@ -11,7 +11,7 @@ provider "azurerm" {
   subscription_id = "32b98b63-700f-4c73-a4fb-b7f4b5a41f5e"
   features {}
 }
-/*
+/*test
 terraform {
   backend "azurerm" {
     resource_group_name  = "terraform-rg"
