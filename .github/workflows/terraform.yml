@@ -24,7 +24,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.MYAZURESECRET2 }}
+          creds: ${{ secrets.MYAZURESECRET }}
         
       - name: Terraform Init
         run: terraform init
