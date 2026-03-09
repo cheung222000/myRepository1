@@ -5,6 +5,3 @@ variable "location" {
 variable "prefix" {
   default = "tfvmex"
 }
-
-variable "clientSecret" {
-}
