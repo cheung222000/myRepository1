@@ -3,5 +3,5 @@ variable "location" {
 }
 
 variable "prefix" {
-  default = "tfvmex"
+  default = "tfPrefix"
 }
