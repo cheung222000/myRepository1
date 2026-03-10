@@ -16,7 +16,7 @@ resource "azurerm_subnet" "myAzureSubnet1" {
   virtual_network_name = azurerm_virtual_network.myAzureVirtualNetwork1.name
   address_prefixes     = ["10.0.2.0/24"]
 }
-
+/*
 resource "azurerm_network_interface" "myAzureNetworkInterface1" {
   name                = "${var.prefix}-nic"
   location            = azurerm_resource_group.myAzureResourceGroup1.location
@@ -28,3 +28,4 @@ resource "azurerm_network_interface" "myAzureNetworkInterface1" {
     private_ip_address_allocation = "Dynamic"
   }
 }
+*/
