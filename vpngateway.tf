@@ -47,6 +47,7 @@ resource "azurerm_public_ip" "example" {
   resource_group_name = azurerm_resource_group.example.name
 
   allocation_method = "Static"
+  zones         = [1, 2, 3]
 }
 
 resource "azurerm_virtual_network_gateway" "example" {
@@ -58,8 +59,9 @@ resource "azurerm_virtual_network_gateway" "example" {
   vpn_type = "RouteBased"
 
   active_active = false
-  enable_bgp   = false
+  enable_bgp    = false
   sku           = "Basic"
+  
 
   ip_configuration {
     name                          = "vnetGatewayConfig"
