@@ -11,3 +11,13 @@ resource "azurerm_local_network_gateway" "myAzureLocalNetworkGateway" {
   address_space       = ["10.0.0.0/16"]
 }
 
+resource "azurerm_public_ip" "myAzurePublicIP" {
+  name                = "145.43.244.136-dataservices-nonprod-uksouth-vpngateway-ip"
+  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
+  location            = azurerm_resource_group.myAzureResourceGroup2.location
+  allocation_method   = "Static"
+
+  tags = {
+    environment = "Production"
+  }
+}
