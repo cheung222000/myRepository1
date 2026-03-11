@@ -21,7 +21,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
     environment = "Production"
   }
 }
-
+##########################################################################
 resource "azurerm_resource_group" "example" {
   name     = "test"
   location = "West Europe"
@@ -46,7 +46,7 @@ resource "azurerm_public_ip" "example" {
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 
-  allocation_method = "Static"
+  allocation_method = "Dynamic"
 }
 
 resource "azurerm_virtual_network_gateway" "example" {
@@ -58,7 +58,7 @@ resource "azurerm_virtual_network_gateway" "example" {
   vpn_type = "RouteBased"
 
   active_active = false
-  #bgp_enabled   = false
+  bgp_enabled   = false
   sku           = "Basic"
 
   ip_configuration {
