@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
   resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
   location            = azurerm_resource_group.myAzureResourceGroup2.location
   allocation_method   = "Static"
-
+  zones         = [1, 2, 3]
   tags = {
     environment = "Production"
   }
@@ -36,15 +36,6 @@ resource "azurerm_subnet" "example" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-resource "azurerm_public_ip" "example" {
-  name                = "test"
-  location            = azurerm_resource_group.myAzureResourceGroup2.location
-  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
-
-  allocation_method = "Static"
-  zones         = [1, 2, 3]
-}
-
 resource "azurerm_virtual_network_gateway" "example" {
   name                = "test"
   location            = azurerm_resource_group.myAzureResourceGroup2.location
@@ -60,7 +51,7 @@ resource "azurerm_virtual_network_gateway" "example" {
 
   ip_configuration {
     name                          = "vnetGatewayConfig"
-    public_ip_address_id          = azurerm_public_ip.example.id
+    public_ip_address_id          = azurerm_public_ip.myAzurePublicIP.id
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.example.id
   }
