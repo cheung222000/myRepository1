@@ -13,7 +13,8 @@ env:
   ARM_CLIENT_SECRET: ${{ secrets.AZURECLIENTSECRET }}
   ARM_SUBSCRIPTION_ID: ${{ secrets.AZURESUBSCRIPTIONID }}
   ARM_TENANT_ID: ${{ secrets.AZURETENANTID }}
-
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  
 jobs:
   terraform:
     runs-on: ubuntu-latest
