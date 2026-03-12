@@ -16,6 +16,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
   resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
   location            = azurerm_resource_group.myAzureResourceGroup2.location
   allocation_method   = "Static"
+  zones         = [1, 2, 3]
   tags = {
     environment = "Production"
   }
