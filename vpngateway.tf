@@ -35,16 +35,7 @@ resource "azurerm_subnet" "example" {
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.1.0/24"]
 }
-/*
-resource "azurerm_public_ip" "example" {
-  name                = "test"
-  location            = azurerm_resource_group.myAzureResourceGroup2.location
-  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
 
-  allocation_method = "Static"
-  zones         = [1, 2, 3]
-}
-*/
 resource "azurerm_virtual_network_gateway" "example" {
   name                = "test"
   location            = azurerm_resource_group.myAzureResourceGroup2.location
