@@ -21,7 +21,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
     environment = "Production"
   }
 }
-##########################################################################
+###########################################################################
 /*resource "azurerm_virtual_network" "example" {
   name                = "test"
   location            = azurerm_resource_group.myAzureResourceGroup2.location
