@@ -39,7 +39,7 @@ resource "azurerm_subnet" "example" {
   #virtual_network_name = azurerm_virtual_network.example.name
   virtual_network_name = azurerm_virtual_network.myAzureVirtualNetwork2.name
   address_prefixes     = ["10.0.1.0/24"]
-  #address_prefixes     = ["10.241.38.0/26"]
+  ##address_prefixes     = ["10.241.38.0/26"]
 }
 /*
 resource "azurerm_virtual_network_gateway" "myAzureVirtualNetworkGateway" {
