@@ -33,7 +33,7 @@ resource "azurerm_virtual_network" "myAzureVirtualNetwork2" {
 }
 
 #resource "azurerm_subnet" "example" {
-resource "azurerm_subnet" "myAzureSubnet1" {
+resource "azurerm_subnet" "myAzureSubnet2" {
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.myAzureResourceGroup2.name
   #virtual_network_name = azurerm_virtual_network.myAzureVirtualNetwork2.name
