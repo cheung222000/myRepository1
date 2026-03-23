@@ -36,7 +36,6 @@ resource "azurerm_subnet" "example" {
 #resource "azurerm_subnet" "myAzureSubnet1" {
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.myAzureResourceGroup2.name
-  #virtual_network_name = azurerm_virtual_network.example.name
   virtual_network_name = azurerm_virtual_network.myAzureVirtualNetwork2.name
   address_prefixes     = ["10.0.1.0/24"]
   ##address_prefixes     = ["10.241.38.0/26"]
