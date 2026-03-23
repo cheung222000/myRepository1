@@ -40,7 +40,7 @@ resource "azurerm_subnet" "myAzureSubnet2" {
   #address_prefixes     = ["10.0.1.0/24"]
   address_prefixes     = ["10.241.38.0/26"]
 }
-/*
+
 resource "azurerm_virtual_network_gateway" "myAzureVirtualNetworkGateway" {
   name                = "dataservices-nonprod-uksouth-virtual-network-gateway"
   location            = azurerm_resource_group.myAzureResourceGroup2.location
@@ -58,7 +58,8 @@ resource "azurerm_virtual_network_gateway" "myAzureVirtualNetworkGateway" {
     name                          = "vnetGatewayConfig"
     public_ip_address_id          = azurerm_public_ip.myAzurePublicIP.id
     private_ip_address_allocation = "Dynamic"
-    subnet_id                     = azurerm_subnet.example.id
+    #subnet_id                     = azurerm_subnet.example.id
+    subnet_id                     = azurerm_subnet.myAzureSubnet2.id
   }
 
   vpn_client_configuration {
@@ -97,5 +98,5 @@ EOF
       thumbprint = "912198EEF23DCAC40939312FEE97DD560BAE49B1"
     }
   }
-}*/
+}
 
