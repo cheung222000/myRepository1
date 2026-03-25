@@ -4,3 +4,6 @@ locals {
 output "hub_data_debug" {
   value = local.hub_data
 }
+output "hub_data_debug2" {
+  value = jsonencode(local.hub_data)
+}
