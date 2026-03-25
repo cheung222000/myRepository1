@@ -1,1 +1,3 @@
-hub_data = yamldecode(file("./data/hubs.yaml"))
+locals {
+  hub_data = yamldecode(file("./data/hubs.yaml"))
+}
