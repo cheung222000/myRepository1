@@ -10,3 +10,6 @@ output "hub_data_debug2" {
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
 }
+output "formatted_hubs_debug" {
+  value = local.formatted_hubs
+}
