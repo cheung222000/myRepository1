@@ -23,7 +23,6 @@ locals {
   hub_data = yamldecode(file("./data/hubs.yaml"))
 
                                           /*
-                                          hub_data_debug = ***
                                             "uksouth" = ***
                                               "dataservices-nonprod" = ***
                                                 "client_ranges" = [
@@ -50,7 +49,6 @@ locals {
                                                 ***
                                               ***
                                             ***
-                                          ***
                                           */
 
   formatted_hubs = flatten([
@@ -63,7 +61,7 @@ locals {
         )
       ]
     ])
-}
+
                                             /*
                                                 "client_ranges" = [
                                                   "10.73.64.0/18",
@@ -90,7 +88,7 @@ locals {
                                                   "sku" = "VpnGw2AZ"
                                                 ***
                                             */
-
+}
 
 output "hub_data_debug" {
   value = local.formatted_hubs
