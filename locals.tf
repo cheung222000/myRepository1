@@ -1,6 +1,7 @@
 locals {
   hub_data = yamldecode(file("./data/hubs.yaml"))
 }
+
 /*
 hub_data_debug = ***
   "uksouth" = ***
@@ -32,6 +33,16 @@ hub_data_debug = ***
 ***
 */
 
+formatted_hubs = flatten([
+    for region, hubs in local.hub_data : [
+      for name, data in hubs : merge({
+        name   = name,
+        region = region
+        },
+        data
+      )
+    ]
+  ])
 
 output "hub_data_debug" {
   value = local.hub_data
