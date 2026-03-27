@@ -46,9 +46,6 @@ locals {
                                                     "10.55.208.0/21",
                                                   ]
                                                   "sku" = "VpnGw2AZ"
-                                                ***
-                                              ***
-                                            ***
                                           */
 
   formatted_hubs = flatten([
@@ -68,8 +65,8 @@ locals {
                                                 ]
                                                 "firewall_sku" = "Premium"
                                                 "hub_range" = "10.241.38.0/24"
-                                                "name" = "dataservices-nonprod"
-                                                "region" = "uksouth"
+                                                "name" = "dataservices-nonprod"      #combine and add to be this hub name
+                                                "region" = "uksouth"                 #combine and add to be this hub name
                                                 "vpn" = ***
                                                   "asn" = 64562
                                                   "bgp_addresses" = [
@@ -86,11 +83,36 @@ locals {
                                                     "10.55.208.0/21",
                                                   ]
                                                   "sku" = "VpnGw2AZ"
-                                                ***
                                             */
 
 hubs      = { for hub in local.formatted_hubs : "${hub.name}-${hub.region}" => hub }
 
+                                            /*
+                                            "dataservices-nonprod-uksouth" = ***
+                                              "client_ranges" = [
+                                                "10.73.64.0/18",
+                                              ]
+                                              "firewall_sku" = "Premium"
+                                              "hub_range" = "10.241.38.0/24"
+                                              "name" = "dataservices-nonprod"
+                                              "region" = "uksouth"
+                                              "vpn" = ***
+                                                "asn" = 64562
+                                                "bgp_addresses" = [
+                                                  "169.254.21.15",
+                                                  "169.254.22.15",
+                                                  "169.254.21.14",
+                                                  "169.254.22.14",
+                                                ]
+                                                "gateway_traffic" = [
+                                                  "145.43.244.136",
+                                                  "145.43.244.168",
+                                                ]
+                                                "ranges" = [
+                                                  "10.55.208.0/21",
+                                                ]
+                                                "sku" = "VpnGw2AZ"
+                                            */
 }
 
 output "hub_data_debug" {
