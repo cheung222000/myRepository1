@@ -47,10 +47,10 @@ locals {
 
 
 output "hub_data_debug" {
-  value = local.hub_data
+  value = local.formatted_hubs
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.hub_data)
+  value = jsonencode(local.formatted_hubs)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
