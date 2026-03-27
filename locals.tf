@@ -50,8 +50,19 @@ locals {
                                               ***
                                             ***
                                           */
-
+  /*
   formatted_hubs = flatten([
+      for region, hubs in local.hub_data : [
+        for name, data in hubs : merge({
+          name   = name,
+          region = region
+          },
+          data
+        )
+      ]
+    ])*/
+
+  formatted_hubs = ([
       for region, hubs in local.hub_data : [
         for name, data in hubs : merge({
           name   = name,
