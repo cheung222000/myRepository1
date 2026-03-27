@@ -88,13 +88,16 @@ locals {
                                                   "sku" = "VpnGw2AZ"
                                                 ***
                                             */
+
+hubs      = { for hub in local.formatted_hubs : "${hub.name}-${hub.region}" => hub }
+
 }
 
 output "hub_data_debug" {
-  value = local.formatted_hubs
+  value = local.hubs
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.formatted_hubs)
+  value = jsonencode(local.hubs)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
