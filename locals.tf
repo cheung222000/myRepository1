@@ -1,3 +1,24 @@
+                                          /*
+                                          uksouth:
+                                            dataservices-nonprod:
+                                              hub_range: 10.241.38.0/24
+                                              client_ranges:
+                                                - 10.73.64.0/18
+                                              firewall_sku: Premium
+                                              vpn:
+                                                sku: VpnGw2AZ
+                                                asn: 64562
+                                                gateway_traffic:
+                                                  - 145.43.244.136
+                                                  - 145.43.244.168
+                                                ranges:
+                                                  - 10.55.208.0/21
+                                                bgp_addresses:
+                                                  - 169.254.21.15
+                                                  - 169.254.22.15
+                                                  - 169.254.21.14
+                                                  - 169.254.22.14
+                                          */
 locals {
   hub_data = yamldecode(file("./data/hubs.yaml"))
 
