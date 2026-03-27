@@ -1,5 +1,5 @@
                                           /*
-                                          uksouth:
+                                          uksouth:                                #Input from yaml to tf file
                                             dataservices-nonprod:
                                               hub_range: 10.241.38.0/24
                                               client_ranges:
@@ -23,8 +23,8 @@ locals {
   hub_data = yamldecode(file("./data/hubs.yaml"))
 
                                           /*
-                                            "uksouth" = ***
-                                              "dataservices-nonprod" = ***
+                                            "uksouth" = ***                        #add "region" = "uksouth" below
+                                              "dataservices-nonprod" = ***         #add "name" = "dataservices-nonprod" below
                                                 "client_ranges" = [
                                                   "10.73.64.0/18",
                                                 ]
@@ -50,19 +50,8 @@ locals {
                                               ***
                                             ***
                                           */
-  /*
-  formatted_hubs = flatten([
-      for region, hubs in local.hub_data : [
-        for name, data in hubs : merge({
-          name   = name,
-          region = region
-          },
-          data
-        )
-      ]
-    ])*/
 
-  formatted_hubs = ([
+  formatted_hubs = flatten([
       for region, hubs in local.hub_data : [
         for name, data in hubs : merge({
           name   = name,
