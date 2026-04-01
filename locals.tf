@@ -219,13 +219,15 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                             ])
                                             */
 
+vpn_gateway_ranges_map = tomap({ for r in local.vpn_gateway_ranges : "${r.primary_ip}-${r.hub}" => r })
+
 }
 
 output "hub_data_debug" {
-  value = local.vpn_gateway_ranges
+  value = local.vpn_gateway_ranges_map
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.vpn_gateway_ranges)
+  value = jsonencode(local.vpn_gateway_ranges_map)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
