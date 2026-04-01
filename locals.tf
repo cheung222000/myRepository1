@@ -165,6 +165,69 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                                   "10.73.64.0/18",
                                                 ]
                                                 "firewall_sku" = "Premium"
+                                                "hub" = "dataservices-nonprod-uksouth"     #combine to be the new hub key
+                                                "hub_range" = "10.241.38.0/24"
+                                                "name" = "dataservices-nonprod"
+                                                "primary_ip" = "145.43.244.136"            #combine to be the new hub key
+                                                "region" = "uksouth"
+                                                "vpn" = ***
+                                                  "asn" = 64562
+                                                  "bgp_addresses" = [
+                                                    "169.254.21.15",
+                                                    "169.254.22.15",
+                                                    "169.254.21.14",
+                                                    "169.254.22.14",
+                                                  ]
+                                                  "gateway_traffic" = [
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
+                                                  ]
+                                                  "ranges" = [
+                                                    "10.55.208.0/21",
+                                                  ]
+                                                  "sku" = "VpnGw2AZ"
+                                                ***
+                                              ***,
+                                              ***
+                                                "client_ranges" = [
+                                                  "10.73.64.0/18",
+                                                ]
+                                                "firewall_sku" = "Premium"
+                                                "hub" = "dataservices-nonprod-uksouth"      #combine to be the new hub key
+                                                "hub_range" = "10.241.38.0/24"
+                                                "name" = "dataservices-nonprod"
+                                                "primary_ip" = "145.43.244.168"             #combine to be the new hub key
+                                                "region" = "uksouth"
+                                                "vpn" = ***
+                                                  "asn" = 64562
+                                                  "bgp_addresses" = [
+                                                    "169.254.21.15",
+                                                    "169.254.22.15",
+                                                    "169.254.21.14",
+                                                    "169.254.22.14",
+                                                  ]
+                                                  "gateway_traffic" = [
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
+                                                  ]
+                                                  "ranges" = [
+                                                    "10.55.208.0/21",
+                                                  ]
+                                                  "sku" = "VpnGw2AZ"
+                                                ***
+                                              ***,
+                                            ])
+                                            */
+
+vpn_gateway_ranges_map = tomap({ for r in local.vpn_gateway_ranges : "${r.primary_ip}-${r.hub}" => r })
+
+                                            /*
+                                            hub_data_debug = tomap(***
+                                              "145.43.244.136-dataservices-nonprod-uksouth" = ***
+                                                "client_ranges" = [
+                                                  "10.73.64.0/18",
+                                                ]
+                                                "firewall_sku" = "Premium"
                                                 "hub" = "dataservices-nonprod-uksouth"
                                                 "hub_range" = "10.241.38.0/24"
                                                 "name" = "dataservices-nonprod"
@@ -187,8 +250,8 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                                   ]
                                                   "sku" = "VpnGw2AZ"
                                                 ***
-                                              ***,
                                               ***
+                                              "145.43.244.168-dataservices-nonprod-uksouth" = ***
                                                 "client_ranges" = [
                                                   "10.73.64.0/18",
                                                 ]
@@ -215,11 +278,9 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                                   ]
                                                   "sku" = "VpnGw2AZ"
                                                 ***
-                                              ***,
-                                            ])
+                                              ***
+                                            ***)
                                             */
-
-vpn_gateway_ranges_map = tomap({ for r in local.vpn_gateway_ranges : "${r.primary_ip}-${r.hub}" => r })
 
 }
 
