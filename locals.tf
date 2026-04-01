@@ -152,13 +152,19 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                                   "sku" = "VpnGw2AZ"
                                             */
 
+  vpn_gateway_ranges = toset(flatten([
+    for key, value in local.vpn_connections : [
+      for ip in try(value.vpn.gateway_traffic, {}) : merge({ "primary_ip" : ip, "hub" : key }, value)
+    ]
+  ]))
+
 }
 
 output "hub_data_debug" {
-  value = local.vpn_connections
+  value = local.vpn_gateway_ranges
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.vpn_connections)
+  value = jsonencode(local.vpn_gateway_ranges)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
