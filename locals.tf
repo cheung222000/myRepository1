@@ -126,7 +126,7 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
 
                                             #if "vpn" found, keep it.
                                             /*
-                                              "dataservices-nonprod-uksouth" = ***
+                                              "dataservices-nonprod-uksouth" = ***    #become value ("name" = "dataservices-nonprod")
                                                 "client_ranges" = [
                                                   "10.73.64.0/18",
                                                 ]
@@ -143,8 +143,8 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
                                                     "169.254.22.14",
                                                   ]
                                                   "gateway_traffic" = [
-                                                    "145.43.244.136",
-                                                    "145.43.244.168",
+                                                    "145.43.244.136",                  #become value ("primary_ip" = "145.43.244.136")
+                                                    "145.43.244.168",                  #become value ("primary_ip" = "145.43.244.168")
                                                   ]
                                                   "ranges" = [
                                                     "10.55.208.0/21",
