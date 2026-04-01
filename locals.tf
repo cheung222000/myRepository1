@@ -115,6 +115,12 @@ hubs      = { for hub in local.formatted_hubs : "${hub.name}-${hub.region}" => h
                                             */
 
 hub_names = tolist([for key, value in local.hubs : key])
+
+                                            /*
+                                            hub_data_debug = tolist([
+                                              "dataservices-nonprod-uksouth",
+                                            ])
+                                            */
 }
 
 output "hub_data_debug" {
