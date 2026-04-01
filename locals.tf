@@ -158,6 +158,67 @@ vpn_connections = { for key, value in local.hubs : key => value if lookup(value,
     ]
   ]))
 
+                                            /*
+                                            hub_data_debug = toset([
+                                              ***
+                                                "client_ranges" = [
+                                                  "10.73.64.0/18",
+                                                ]
+                                                "firewall_sku" = "Premium"
+                                                "hub" = "dataservices-nonprod-uksouth"
+                                                "hub_range" = "10.241.38.0/24"
+                                                "name" = "dataservices-nonprod"
+                                                "primary_ip" = "145.43.244.136"
+                                                "region" = "uksouth"
+                                                "vpn" = ***
+                                                  "asn" = 64562
+                                                  "bgp_addresses" = [
+                                                    "169.254.21.15",
+                                                    "169.254.22.15",
+                                                    "169.254.21.14",
+                                                    "169.254.22.14",
+                                                  ]
+                                                  "gateway_traffic" = [
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
+                                                  ]
+                                                  "ranges" = [
+                                                    "10.55.208.0/21",
+                                                  ]
+                                                  "sku" = "VpnGw2AZ"
+                                                ***
+                                              ***,
+                                              ***
+                                                "client_ranges" = [
+                                                  "10.73.64.0/18",
+                                                ]
+                                                "firewall_sku" = "Premium"
+                                                "hub" = "dataservices-nonprod-uksouth"
+                                                "hub_range" = "10.241.38.0/24"
+                                                "name" = "dataservices-nonprod"
+                                                "primary_ip" = "145.43.244.168"
+                                                "region" = "uksouth"
+                                                "vpn" = ***
+                                                  "asn" = 64562
+                                                  "bgp_addresses" = [
+                                                    "169.254.21.15",
+                                                    "169.254.22.15",
+                                                    "169.254.21.14",
+                                                    "169.254.22.14",
+                                                  ]
+                                                  "gateway_traffic" = [
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
+                                                  ]
+                                                  "ranges" = [
+                                                    "10.55.208.0/21",
+                                                  ]
+                                                  "sku" = "VpnGw2AZ"
+                                                ***
+                                              ***,
+                                            ])
+                                            */
+
 }
 
 output "hub_data_debug" {
