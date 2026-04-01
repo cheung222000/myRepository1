@@ -121,13 +121,15 @@ hub_names = tolist([for key, value in local.hubs : key])
                                               "dataservices-nonprod-uksouth",
                                             ])
                                             */
+
+vpn_connections = { for key, value in local.hubs : key => value if lookup(value, "vpn", null) != null }
 }
 
 output "hub_data_debug" {
-  value = local.hub_names
+  value = local.vpn_connections
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.hub_names)
+  value = jsonencode(local.vpn_connections)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
