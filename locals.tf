@@ -113,13 +113,15 @@ hubs      = { for hub in local.formatted_hubs : "${hub.name}-${hub.region}" => h
                                                 ]
                                                 "sku" = "VpnGw2AZ"
                                             */
+
+hub_names = tolist([for key, value in local.hubs : key])
 }
 
 output "hub_data_debug" {
-  value = local.hubs
+  value = local.hub_names
 }
 output "hub_data_debug2" {
-  value = jsonencode(local.hubs)
+  value = jsonencode(local.hub_names)
 }
 output "hub_data_debug3" {
   value = local.hub_data["uksouth"]
