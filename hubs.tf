@@ -1,5 +1,5 @@
 module "metadata" {
-  #source   = "github.com/Azure-Terraform/terraform-azurerm-metadata.git?ref=v1.5.3"
+  source   = "github.com/Azure-Terraform/terraform-azurerm-metadata.git?ref=v1.5.3"
   for_each = local.hubs
 
   #naming_rules = module.naming.yaml
