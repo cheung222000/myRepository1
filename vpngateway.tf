@@ -12,7 +12,9 @@ resource "azurerm_local_network_gateway" "myAzureLocalNetworkGateway" {
 }
 
 resource "azurerm_public_ip" "myAzurePublicIP" {
-  name                = "145.43.244.136-dataservices-nonprod-uksouth-vpngateway-ip"
+  for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
+  
+  name                = "${each.key}-vpngateway-ip"
   resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
   location            = azurerm_resource_group.myAzureResourceGroup2.location
   allocation_method   = "Static"
