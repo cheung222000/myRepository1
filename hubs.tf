@@ -1,6 +1,7 @@
 module "metadata" {
   source   = "./modules/metadata"
 
+  naming_rules = "my_naming_rule"
   market              = "us"
 }
 
