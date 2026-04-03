@@ -1,3 +1,4 @@
+/*
 module "metadata" {
   #source   = "github.com/Azure-Terraform/terraform-azurerm-metadata.git?ref=v1.5.3"
   source   = "./data/hubs.yaml"
@@ -16,3 +17,4 @@ module "metadata" {
   subscription_type   = "production"
   resource_group_type = "shared"
 }
+*/
