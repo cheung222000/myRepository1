@@ -1,4 +1,4 @@
-module "metadata" {
+module "metadata3" {
   source   = "./modules/metadata"
 }
 
