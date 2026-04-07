@@ -2,7 +2,7 @@ module "metadata" {
   source   = "./modules/metadata"
   for_each = local.hubs
 
-  naming_rules = "my_naming_rule"
+  naming_rules = module.naming.yaml
 
   market              = "us"
   project             = "Global Network Hub"
