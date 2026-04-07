@@ -19,5 +19,5 @@ module "metadata" {
 
 output "current_subscription_id" {
   value = nonsensitive(data.azurerm_subscription.current.subscription_id)
-  sensitive = false
+  #sensitive = false
 }
