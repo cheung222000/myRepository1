@@ -5,12 +5,12 @@ module "metadata" {
 
   market              = "us"
   project             = "Global Network Hub"
-  location            = "each.value.region"
+  location            = "us"
   environment         = "prod"
   product_name        = "expressroute"
   business_unit       = "iog"
   product_group       = "networks"
-  subscription_id     = "data.azurerm_subscription.current.subscription_id"
+  subscription_id     = "subid
   subscription_type   = "production"
   resource_group_type = "shared"
 }
