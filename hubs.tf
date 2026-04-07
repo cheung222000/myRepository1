@@ -6,7 +6,7 @@ module "metadata" {
 
   market              = "us"
   project             = "Global Network Hub"
-  location            = "usus"
+  location            = each.value.region
   environment         = "prod"
   product_name        = "expressroute"
   business_unit       = "iog"
