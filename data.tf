@@ -1,2 +1,2 @@
-data "azurerm_subscription" "current" {
+data "azurerm_subscription" "current" {  #Grap Azure subscription id after loggin
 }
