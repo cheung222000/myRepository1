@@ -1,3 +1,3 @@
-module "metadata" {
+module "naming" {
   source   = "./modules/naming"
 }
