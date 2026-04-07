@@ -2,7 +2,7 @@ variable "naming_rules" {
   description = "naming conventions yaml file" 
   type        = string
 }
-/*
+
 variable "business_unit" {
   description = "rba.businessUnit (https://github.com/Azure-Terraform/example-naming-template#custombusinessunit)"
   type        = string
@@ -12,12 +12,12 @@ variable "environment" {
   description = "rba.environment (https://github.com/Azure-Terraform/example-naming-template#customenvironment)"
   type        = string
 }
-*/
+
 variable "market" {
   description = "rba.market (https://github.com/Azure-Terraform/example-naming-template#custommarket)"
   type        = string
 }
-/*
+
 variable "subscription_id" {
   description = "Azure Subscription ID"
   type        = string
@@ -55,8 +55,3 @@ variable "project" {
   type        = string
 }
 
-variable "resource_group_type" {
-  description = "rba.resourceGroupType (https://github.com/Azure-Terraform/example-naming-template#customresourcegrouptype)"
-  type        = string
-}
-*/
