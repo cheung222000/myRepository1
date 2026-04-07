@@ -15,3 +15,8 @@ module "metadata" {
   subscription_type   = "production"
   resource_group_type = "shared"
 }
+
+
+output "current_subscription_id" {
+  value = data.azurerm_subscription.current.subscription_id
+}
