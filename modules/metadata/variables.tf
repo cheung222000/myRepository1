@@ -54,9 +54,4 @@ variable "project" {
   description = "Jira Project"
   type        = string
 }
-/*
-variable "resource_group_type" {
-  description = "rba.resourceGroupType (https://github.com/Azure-Terraform/example-naming-template#customresourcegrouptype)"
-  type        = string
-}
-*/
+
