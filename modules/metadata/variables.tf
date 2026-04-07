@@ -7,12 +7,12 @@ variable "business_unit" {
   description = "rba.businessUnit (https://github.com/Azure-Terraform/example-naming-template#custombusinessunit)"
   type        = string
 }
-
+*/
 variable "environment" {
   description = "rba.environment (https://github.com/Azure-Terraform/example-naming-template#customenvironment)"
   type        = string
 }
-*/
+
 variable "market" {
   description = "rba.market (https://github.com/Azure-Terraform/example-naming-template#custommarket)"
   type        = string
