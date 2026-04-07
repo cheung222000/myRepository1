@@ -9,6 +9,6 @@ module "metadata" {
   product_name        = "expressroute"
   business_unit       = "iog"
   product_group       = "networks"
-  subscription_id     = "subid
+  subscription_id     = "subid"
   subscription_type   = "production"
 }
