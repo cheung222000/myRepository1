@@ -11,4 +11,5 @@ module "metadata" {
   product_group       = "networks"
   subscription_id     = "subid"
   subscription_type   = "production"
+  resource_group_type = "shared"
 }
