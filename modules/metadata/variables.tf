@@ -17,12 +17,12 @@ variable "market" {
   description = "rba.market (https://github.com/Azure-Terraform/example-naming-template#custommarket)"
   type        = string
 }
-/*
+
 variable "subscription_id" {
   description = "Azure Subscription ID"
   type        = string
 }
-*/
+
 variable "subscription_type" {
   description = "rba.subscriptionType (https://github.com/Azure-Terraform/example-naming-template#customsubscriptiontype)"
   type        = string
