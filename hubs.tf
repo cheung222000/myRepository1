@@ -11,7 +11,7 @@ module "metadata" {
   product_name        = "expressroute"
   business_unit       = "iog"
   product_group       = "networks"
-  subscription_id     = "subid"
+  subscription_id     = data.azurerm_subscription.current.subscription_id
   subscription_type   = "production"
   resource_group_type = "shared"
 }
