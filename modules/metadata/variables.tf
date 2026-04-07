@@ -2,12 +2,12 @@ variable "naming_rules" {
   description = "naming conventions yaml file" 
   type        = string
 }
-/*
+
 variable "business_unit" {
   description = "rba.businessUnit (https://github.com/Azure-Terraform/example-naming-template#custombusinessunit)"
   type        = string
 }
-*/
+
 variable "environment" {
   description = "rba.environment (https://github.com/Azure-Terraform/example-naming-template#customenvironment)"
   type        = string
@@ -38,7 +38,7 @@ variable "product_group" {
     error_message = "ERROR: product_group must [a-z0-9]{2,12}."
   }
 }
-
+*/
 variable "product_name" {
   description = "rba.productName (https://github.com/Azure-Terraform/example-naming-template#customproductname)"
   type        = string
@@ -49,7 +49,7 @@ variable "product_name" {
     error_message = "ERROR: product_name must be [a-z0-9]{3,16}."
   }
 }
-*/
+
 variable "project" {
   description = "Jira Project"
   type        = string
