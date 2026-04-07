@@ -13,6 +13,11 @@ variable "environment" {
   type        = string
 }
 
+variable "location" {
+  description = "rba.azureRegion (https://github.com/Azure-Terraform/example-naming-template#customazureregion)"
+  type        = string
+}
+
 variable "market" {
   description = "rba.market (https://github.com/Azure-Terraform/example-naming-template#custommarket)"
   type        = string
