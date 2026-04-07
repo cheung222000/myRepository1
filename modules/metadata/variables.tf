@@ -22,7 +22,7 @@ variable "subscription_id" {
   description = "Azure Subscription ID"
   type        = string
 }
-
+*/
 variable "subscription_type" {
   description = "rba.subscriptionType (https://github.com/Azure-Terraform/example-naming-template#customsubscriptiontype)"
   type        = string
@@ -38,7 +38,7 @@ variable "product_group" {
     error_message = "ERROR: product_group must [a-z0-9]{2,12}."
   }
 }
-*/
+
 variable "product_name" {
   description = "rba.productName (https://github.com/Azure-Terraform/example-naming-template#customproductname)"
   type        = string
