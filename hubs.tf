@@ -4,7 +4,7 @@ module "metadata" {
   naming_rules = "my_naming_rule"
 
   market              = "us"
-  #project             = "Global Network Hub"
+  project             = "Global Network Hub"
   #location            = "us"
   #environment         = "prod"
   #product_name        = "expressroute"
