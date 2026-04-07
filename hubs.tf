@@ -1,5 +1,6 @@
 module "metadata" {
   source   = "./modules/metadata"
+  for_each = local.hubs
 
   naming_rules = "my_naming_rule"
 
