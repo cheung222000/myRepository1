@@ -4,6 +4,15 @@ locals {
 
   location = local.naming_rules.azureRegion.allowed_values[var.location]
 
+  names = merge(
+    {
+      business_unit     = var.business_unit
+      environment       = var.environment
+      location          = var.location
+      market            = var.market
+      subscription_type = var.subscription_type
+    },
+  )
 /*
   names = merge(
     {
