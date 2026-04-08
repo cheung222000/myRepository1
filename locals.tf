@@ -286,6 +286,7 @@ vpn_gateway_ranges_map = tomap({ for r in local.vpn_gateway_ranges : "${r.primar
 output "hub_data_debug" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   myvalue = each.value.hub.location
+}
 
 /*
 output "hub_data_debug" {
