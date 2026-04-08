@@ -289,6 +289,10 @@ output "hub_data_debug" {
   value = local.hubs
 }
 
+output "hub_data_debug2" {
+  value = local.vpn_gateway_ranges_map
+}
+
 /*
 output "hub_data_debug" {
   value = local.vpn_gateway_ranges_map
