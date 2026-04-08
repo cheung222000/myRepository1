@@ -4,6 +4,7 @@ locals {
 
   location = local.naming_rules.azureRegion.allowed_values[var.location]
 
+/*
   names = merge(
     {
       business_unit     = var.business_unit
@@ -20,5 +21,6 @@ locals {
     var.subnet_type != "" ? { subnet_type = var.subnet_type } : {},
     var.virtual_network_gateway_type != "" ? { virtual_network_gateway_type = var.virtual_network_gateway_type } : {},
   )
+*/
   
 }
