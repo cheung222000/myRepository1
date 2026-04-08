@@ -293,6 +293,10 @@ output "hub_data_debug2" {
   value = local.vpn_gateway_ranges_map
 }
 
+output "hub_data_debug3" {
+  value = module.metadata["dataservices-nonprod-uksouth"].location
+}
+
 /*
 output "hub_data_debug" {
   value = local.vpn_gateway_ranges_map
