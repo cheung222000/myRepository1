@@ -16,6 +16,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
   
   name                = "${each.key}-vpngateway-ip"
   resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
+  #resource_group_name = module.resource_group[each.value.hub].name
   location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
   allocation_method   = "Static"
   zones         = [1, 2, 3]
