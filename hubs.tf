@@ -18,7 +18,7 @@ module "metadata" {
 
 module "resource_group" {
   source   = "./modules/resource_group"
-  #for_each = local.hubs
+  for_each = local.hubs
 
   #unique_name = each.value.name
   #location    = module.metadata[each.key].location
