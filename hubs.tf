@@ -24,7 +24,7 @@ module "resource_group" {
   #location    = module.metadata[each.key].location
   #names       = module.metadata[each.key].names
   #tags        = module.metadata[each.key].tags
-#
+}
 
 /*output "current_subscription_id" {
   value = nonsensitive(data.azurerm_subscription.current.subscription_id)
