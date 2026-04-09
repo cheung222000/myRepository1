@@ -16,15 +16,15 @@ module "metadata" {
   resource_group_type = "shared"
 }
 
-#module "resource_group" {
-  #source   = "github.com/Azure-Terraform/terraform-azurerm-resource-group.git?ref=v2.1.1"
+module "resource_group" {
+  source   = "./modules/resource_group"
   #for_each = local.hubs
 
   #unique_name = each.value.name
   #location    = module.metadata[each.key].location
   #names       = module.metadata[each.key].names
   #tags        = module.metadata[each.key].tags
-#}
+#
 
 /*output "current_subscription_id" {
   value = nonsensitive(data.azurerm_subscription.current.subscription_id)
