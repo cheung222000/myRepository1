@@ -71,3 +71,9 @@ variable "resource_group_type" {
   description = "rba.resourceGroupType (https://github.com/Azure-Terraform/example-naming-template#customresourcegrouptype)"
   type        = string
 }
+
+variable "service_name" {
+  description = "rba.serviceName (https://github.com/Azure-Terraform/example-naming-template#customservicename)"
+  type        = string
+  default     = ""
+}
