@@ -33,6 +33,13 @@ variable "subscription_type" {
   type        = string
 }
 
+# Optional tags
+variable "on_prem" {
+  description = "rba.onPrem (https://github.com/Azure-Terraform/example-naming-template#customonprem)"
+  type        = string
+  default     = ""
+}
+
 variable "product_group" {
   description = "rba.productGroup (https://github.com/Azure-Terraform/example-naming-template#customproductgroup) or [a-z0-9]{2,12}"
   type        = string
