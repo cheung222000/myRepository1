@@ -8,6 +8,7 @@ variable "tags" {
   description = "Tags to be applied to resources (inclusive)"
   type        = map(string)
 }
+*/
 
 variable "unique_name" {
   description = "Freeform input to append to resource group name. Set to 'true', to append 5 random integers"
@@ -21,6 +22,7 @@ variable "name_suffix" {
   default     = ""
 }
 
+/*
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
   type = object({
