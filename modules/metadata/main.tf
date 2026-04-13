@@ -12,7 +12,7 @@ locals {
       market            = var.market
       subscription_type = var.subscription_type
     }, #optional values
-    #var.on_prem != "" ? { on_prem = var.on_prem } : {},
+    var.on_prem != "" ? { on_prem = var.on_prem } : {},
     #var.product_group != "" ? { product_group = var.product_group } : {},
     #var.product_name != "" ? { product_name = var.product_name } : {},
     #var.resource_group_type != "" ? { resource_group_type = var.resource_group_type } : {},
