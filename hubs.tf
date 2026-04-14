@@ -23,7 +23,7 @@ module "resource_group" {
   unique_name = each.value.name
   location    = module.metadata[each.key].location
   names       = module.metadata[each.key].names
-  #tags        = module.metadata[each.key].tags
+  tags        = module.metadata[each.key].tags
 }
 
 /*output "current_subscription_id" {
