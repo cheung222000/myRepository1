@@ -25,12 +25,12 @@ locals {
   tags = merge( #creating object
     { #mandatory values
       business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]
-      #environment       = local.naming_rules.environment.allowed_values[var.environment]
-      #location          = local.naming_rules.azureRegion.allowed_values[var.location]
-      #market            = local.naming_rules.market.allowed_values[var.market]
-      #subscription_id   = var.subscription_id
-      #subscription_type = local.naming_rules.subscriptionType.allowed_values[var.subscription_type]
-      #project           = var.project
+      environment       = local.naming_rules.environment.allowed_values[var.environment]
+      location          = local.naming_rules.azureRegion.allowed_values[var.location]
+      market            = local.naming_rules.market.allowed_values[var.market]
+      subscription_id   = var.subscription_id
+      subscription_type = local.naming_rules.subscriptionType.allowed_values[var.subscription_type]
+      project           = var.project
     }, #optional values
     #var.on_prem != "" ? { on_prem = local.naming_rules.onPrem.allowed_values[var.on_prem] } : {},
     #var.product_group != "" ? { product_group = lookup(local.naming_rules.productGroup.allowed_values, var.product_group, var.product_group) } : {},
