@@ -37,10 +37,10 @@ locals {
     var.product_name != "" ? { product_name = lookup(local.naming_rules.productName.allowed_values, var.product_name, var.product_name) } : {},
     var.resource_group_type != "" ? { resource_group_type = local.naming_rules.resourceGroupType.allowed_values[var.resource_group_type] } : {},
     var.service_name != "" ? { service_name = local.naming_rules.serviceName.allowed_values[var.service_name] } : {},
-    #var.sre_team != "" ? { sre_team = var.sre_team } : {},
+    var.sre_team != "" ? { sre_team = var.sre_team } : {},
     var.subnet_type != "" ? { subnet_type = local.naming_rules.subnetType.allowed_values[var.subnet_type] } : {},
     var.virtual_network_gateway_type != "" ? { virtual_network_gateway_type = local.naming_rules.virtualNetGwType.allowed_values[var.virtual_network_gateway_type] } : {},
-    #var.additional_tags,
+    var.additional_tags,
     #local.default_tags,
   )
 
