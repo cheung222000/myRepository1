@@ -22,7 +22,7 @@ variable "name_suffix" {
   default     = ""
 }
 
-/*
+
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
   type = object({
@@ -33,4 +33,4 @@ variable "names" {
     resource_group_type = string
   })
 }
-*/
+
