@@ -20,7 +20,7 @@ locals {
     var.subnet_type != "" ? { subnet_type = var.subnet_type } : {},
     var.virtual_network_gateway_type != "" ? { virtual_network_gateway_type = var.virtual_network_gateway_type } : {},
   )
-/*
+
   # Tagging metadata
   tags = merge( #creating object
     { #mandatory values
@@ -43,5 +43,5 @@ locals {
     #var.additional_tags,
     #local.default_tags,
   )
-*/
+
 }
