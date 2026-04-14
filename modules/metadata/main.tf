@@ -2,6 +2,13 @@
 
 locals {
 
+  # Global Tags
+  default_tags = {
+    terraform = "true"
+    provider  = "azurerm"
+  }
+
+  # Azure Region
   location = local.naming_rules.azureRegion.allowed_values[var.location]
 
   names = merge( #creating object
