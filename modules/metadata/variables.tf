@@ -77,3 +77,15 @@ variable "service_name" {
   type        = string
   default     = ""
 }
+
+variable "subnet_type" {
+  description = "rba.subnetType (https://github.com/Azure-Terraform/example-naming-template#customsubnettype)"
+  type        = string
+  default     = ""
+}
+
+variable "virtual_network_gateway_type" {
+  description = "virtualNetGwType (https://github.com/Azure-Terraform/example-naming-template#customvirtualnetgwtype)"
+  type        = string
+  default     = ""
+}
