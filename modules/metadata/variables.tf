@@ -78,6 +78,12 @@ variable "service_name" {
   default     = ""
 }
 
+variable "sre_team" {
+  description = "SRE Team owner"
+  type        = string
+  default     = ""
+}
+
 variable "subnet_type" {
   description = "rba.subnetType (https://github.com/Azure-Terraform/example-naming-template#customsubnettype)"
   type        = string
@@ -88,4 +94,11 @@ variable "virtual_network_gateway_type" {
   description = "virtualNetGwType (https://github.com/Azure-Terraform/example-naming-template#customvirtualnetgwtype)"
   type        = string
   default     = ""
+}
+
+# Optional free-form tags
+variable "additional_tags" {
+  type        = map(string)
+  description = "A map of additional tags to add to the tags output"
+  default     = {}
 }
