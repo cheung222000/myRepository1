@@ -24,7 +24,7 @@ locals {
   # Tagging metadata
   tags = merge( #creating object
     { #mandatory values
-      #business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]
+      business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]
       #environment       = local.naming_rules.environment.allowed_values[var.environment]
       #location          = local.naming_rules.azureRegion.allowed_values[var.location]
       #market            = local.naming_rules.market.allowed_values[var.market]
