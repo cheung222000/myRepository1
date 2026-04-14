@@ -4,7 +4,7 @@ locals {
 
   location = local.naming_rules.azureRegion.allowed_values[var.location]
 
-  names = merge(
+  names = merge( #creating object
     { #mandatory values
       business_unit     = var.business_unit
       environment       = var.environment
