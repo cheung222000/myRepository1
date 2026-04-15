@@ -22,8 +22,18 @@ module "resource_group" {
 
   unique_name = each.value.name
   location    = module.metadata[each.key].location
-  names       = module.metadata[each.key].names
+  names       = module.metadata[each.key].names            //module.metadata[dataservices-nonprod-uksouth].names
   tags        = module.metadata[each.key].tags
+
+                                                      /*
+                                                        names = merge( #creating object
+                                                          { #mandatory values
+                                                            business_unit     = var.business_unit      //iog
+                                                            environment       = var.environment        //prod
+                                                            location          = var.location           //
+                                                            market            = var.market             //us
+                                                            subscription_type = var.subscription_type  //production
+                                                      */
 }
 
 /*output "current_subscription_id" {
