@@ -30,7 +30,7 @@ module "resource_group" {
                                                           { #mandatory values
                                                             business_unit     = var.business_unit      //iog
                                                             environment       = var.environment        //prod
-                                                            location          = var.location           //
+                                                            location          = var.location           //uksouth
                                                             market            = var.market             //us
                                                             subscription_type = var.subscription_type  //production
                                                       */
