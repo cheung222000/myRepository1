@@ -24,11 +24,11 @@ variable "name_suffix" {
 variable "names" {
   description = "Names to be applied to resources (inclusive)"
   type = object({
-    environment         = string
-    location            = string
-    market              = string
-    product_name        = string
-    resource_group_type = string
+    environment         = string                                    #prod
+    location            = string                                    #
+    market              = string                                    #us
+    product_name        = string                                    #expressroute
+    resource_group_type = string                                    #shared
   })
 }
 
