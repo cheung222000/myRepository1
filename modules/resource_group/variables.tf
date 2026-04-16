@@ -25,7 +25,7 @@ variable "names" {
   description = "Names to be applied to resources (inclusive)"
   type = object({
     environment         = string                                    #prod
-    location            = string                                    #
+    location            = string                                    #uksouth
     market              = string                                    #us
     product_name        = string                                    #expressroute
     resource_group_type = string                                    #shared
