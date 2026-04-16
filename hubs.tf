@@ -20,7 +20,7 @@ module "resource_group" {
   source   = "./modules/resource_group"
   for_each = local.hubs
 
-  unique_name = each.value.name
+  unique_name = each.value.name                            #dataservices-nonprod
   location    = module.metadata[each.key].location
   names       = module.metadata[each.key].names            //module.metadata[dataservices-nonprod-uksouth].names
   tags        = module.metadata[each.key].tags
