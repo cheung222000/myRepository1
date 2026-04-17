@@ -27,7 +27,7 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
   }
 }
 
-/*
+
 resource "azurerm_public_ip" "vpngateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
@@ -42,6 +42,7 @@ resource "azurerm_public_ip" "vpngateway" {
   }
 }
 
+/*
 resource "azurerm_public_ip" "vpngateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
 
