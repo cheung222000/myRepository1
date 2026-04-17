@@ -7,10 +7,9 @@ resource "random_integer" "suffix" {
   max = 99999
 }
 
-/*
 resource "azurerm_resource_group" "rg" {
   name     = local.unique_name != null ? "${local.resource_group_name}-${local.unique_name}" : local.resource_group_name  #shared-expressroute-prod-uksouth #dataservices-nonprod
   location = var.location
   tags     = var.tags
 }
-*/
+
