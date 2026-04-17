@@ -32,12 +32,12 @@ resource "azurerm_public_ip" "vpngateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
   name                = "${each.key}-vpngateway-ip"
-  #resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
-  resource_group_name = module.resource_group[each.value.hub].name
   location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
+  resource_group_name = module.resource_group[each.value.hub].name
+  tags                = module.metadata[each.value.hub].tags
   allocation_method   = "Static"
   zones         = [1, 2, 3]
-  tags                = module.metadata[each.value.hub].tags
+
 }
 
 /*
