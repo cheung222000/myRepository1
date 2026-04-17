@@ -36,6 +36,7 @@ resource "azurerm_public_ip" "vpngateway" {
   resource_group_name = module.resource_group[each.value.hub].name
   tags                = module.metadata[each.value.hub].tags
   allocation_method   = "Static"
+  sku                 = "Standard"
   zones         = [1, 2, 3]
 
 }
