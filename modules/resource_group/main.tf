@@ -9,7 +9,7 @@ resource "random_integer" "suffix" {
 
 /*
 resource "azurerm_resource_group" "rg" {
-  name     = local.unique_name != null ? "${local.resource_group_name}-${local.unique_name}" : local.resource_group_name  #dataservices-nonprod
+  name     = local.unique_name != null ? "${local.resource_group_name}-${local.unique_name}" : local.resource_group_name  #shared-expressroute-prod-uksouth #dataservices-nonprod
   location = var.location
   tags     = var.tags
 }
