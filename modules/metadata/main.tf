@@ -33,7 +33,7 @@ locals {
     { #mandatory values
       business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]                      #iog
       environment       = local.naming_rules.environment.allowed_values[var.environment]                         #prod
-      location          = local.naming_rules.azureRegion.allowed_values[var.location]                            #
+      location          = local.naming_rules.azureRegion.allowed_values[var.location]                            #uksouth
       market            = local.naming_rules.market.allowed_values[var.market]                                   #us
       subscription_id   = var.subscription_id                                                                    #xxxxxxxxxxxxxxxx
       subscription_type = local.naming_rules.subscriptionType.allowed_values[var.subscription_type]              #production
