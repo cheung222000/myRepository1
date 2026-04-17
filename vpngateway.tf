@@ -16,7 +16,7 @@ resource "azurerm_local_network_gateway" "myAzureLocalNetworkGateway" {
 resource "azurerm_public_ip" "myAzurePublicIP" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
-  name                = "${each.key}-vpngateway-ip"
+  name                = "${each.key}-vpngateway-ip-test"
   resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
   #resource_group_name = module.resource_group[each.value.hub].name
   location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
