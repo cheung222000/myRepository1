@@ -31,12 +31,12 @@ locals {
   # Tagging metadata
   tags = merge( #creating object
     { #mandatory values
-      business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]                      #iog
-      environment       = local.naming_rules.environment.allowed_values[var.environment]                         #prod
-      location          = local.naming_rules.azureRegion.allowed_values[var.location]                            #uksouth
-      market            = local.naming_rules.market.allowed_values[var.market]                                   #us
+      business_unit     = local.naming_rules.businessUnit.allowed_values[var.business_unit]                      #iog > infrastructure Operations
+      environment       = local.naming_rules.environment.allowed_values[var.environment]                         #prod > Production
+      location          = local.naming_rules.azureRegion.allowed_values[var.location]                            #uksouth > UK South
+      market            = local.naming_rules.market.allowed_values[var.market]                                   #us > United States
       subscription_id   = var.subscription_id                                                                    #xxxxxxxxxxxxxxxx
-      subscription_type = local.naming_rules.subscriptionType.allowed_values[var.subscription_type]              #production
+      subscription_type = local.naming_rules.subscriptionType.allowed_values[var.subscription_type]              #production > Production
       project           = var.project                                                                            #Global Network Hub
     }, #optional values
     var.on_prem != "" ? { on_prem = local.naming_rules.onPrem.allowed_values[var.on_prem] } : {},                                                                           #
