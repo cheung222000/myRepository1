@@ -1,3 +1,4 @@
+############################################################################################################################
 resource "azurerm_resource_group" "myAzureResourceGroup2" {
   name     = "shared-expressroute-prod-uksouth-dataservices-nonprod-test"
   location = var.location
