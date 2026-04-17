@@ -48,7 +48,7 @@ locals {
     var.subnet_type != "" ? { subnet_type = local.naming_rules.subnetType.allowed_values[var.subnet_type] } : {},                                                           #
     var.virtual_network_gateway_type != "" ? { virtual_network_gateway_type = local.naming_rules.virtualNetGwType.allowed_values[var.virtual_network_gateway_type] } : {},  #
     var.additional_tags,                                                                                                                                                    #
-    local.default_tags,                                                                                                                                                     #
+    local.default_tags,                                                                                                                                                     #terraform = "true", provider  = "azurerm"
   )
 
 }
