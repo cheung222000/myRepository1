@@ -40,7 +40,7 @@ locals {
       project           = var.project                                                                            #Global Network Hub
     }, #optional values
     var.on_prem != "" ? { on_prem = local.naming_rules.onPrem.allowed_values[var.on_prem] } : {},                                                                           #
-    var.product_group != "" ? { product_group = lookup(local.naming_rules.productGroup.allowed_values, var.product_group, var.product_group) } : {},                        #networks > Core Networking
+    var.product_group != "" ? { product_group = lookup(local.naming_rules.productGroup.allowed_values, var.product_group, var.product_group) } : {},                        #networks > Core Networking #lookup(map, key, default) #map a value or default value
     var.product_name != "" ? { product_name = lookup(local.naming_rules.productName.allowed_values, var.product_name, var.product_name) } : {},                             #expressroute
     var.resource_group_type != "" ? { resource_group_type = local.naming_rules.resourceGroupType.allowed_values[var.resource_group_type] } : {},                            #shared
     var.service_name != "" ? { service_name = local.naming_rules.serviceName.allowed_values[var.service_name] } : {},                                                       #
