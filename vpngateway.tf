@@ -37,9 +37,7 @@ resource "azurerm_public_ip" "vpngateway" {
   location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
   allocation_method   = "Static"
   zones         = [1, 2, 3]
-  tags = {
-    environment = "Production"
-  }
+  tags                = module.metadata[each.value.hub].tags
 }
 
 /*
