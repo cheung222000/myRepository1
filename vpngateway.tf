@@ -37,7 +37,7 @@ resource "azurerm_local_network_gateway" "gateway" {
   resource_group_name = module.resource_group[each.value.hub].name
   tags                = module.metadata[each.value.hub].tags
   gateway_address     = each.value.primary_ip
-  #address_space       = ["10.0.0.0/16"]
+  #address_space      = [each.value.vpn.range]
   bgp_settings {
     asn = "65027" # UK ASN
 
