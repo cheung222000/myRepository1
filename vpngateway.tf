@@ -36,12 +36,12 @@ resource "azurerm_local_network_gateway" "gateway" {
   location            = module.metadata[each.value.hub].location
   resource_group_name = module.resource_group[each.value.hub].name
   gateway_address     = each.value.primary_ip
-  #address_space       = ["10.0.0.0/16"]
-  bgp_settings {
+  address_space       = ["10.0.0.0/16"]
+  /*bgp_settings {
     asn = "65027" # UK ASN
 
     bgp_peering_address = endswith(each.value.primary_ip, "244.136") ? each.value.vpn.bgp_addresses[0] : each.value.vpn.bgp_addresses[1]
-  }
+  }*/
 }
 
 resource "azurerm_public_ip" "vpngateway" {
