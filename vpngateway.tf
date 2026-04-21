@@ -27,7 +27,6 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
   }
 }
 
-/*
 resource "azurerm_local_network_gateway" "gateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
@@ -37,7 +36,6 @@ resource "azurerm_local_network_gateway" "gateway" {
   gateway_address     = "145.43.244.136"
   address_space       = ["10.0.0.0/16"]
 }
-*/
 
 resource "azurerm_public_ip" "vpngateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
