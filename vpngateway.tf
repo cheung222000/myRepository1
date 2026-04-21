@@ -30,10 +30,10 @@ resource "azurerm_public_ip" "myAzurePublicIP" {
 resource "azurerm_local_network_gateway" "gateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
-  name                = "145.43.244.136-dataservices-nonprod-uksouth-local-network-gateway"
+  name                = "${each.key}-local-network-gateway"
   location            = module.metadata[each.value.hub].location
   resource_group_name = module.resource_group[each.value.hub].name
-  gateway_address     = "145.43.244.136"
+  gateway_address     = each.value.primary_ip
   address_space       = ["10.0.0.0/16"]
 }
 
