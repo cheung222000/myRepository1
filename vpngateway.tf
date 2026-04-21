@@ -1,34 +1,3 @@
-
-############################################################################################################################
-resource "azurerm_resource_group" "myAzureResourceGroup2" {
-  name     = "shared-expressroute-prod-uksouth-dataservices-nonprod-test"
-  location = var.location
-}
-
-/*
-resource "azurerm_local_network_gateway" "myAzureLocalNetworkGateway" {
-  name                = "145.43.244.136-dataservices-nonprod-uksouth-local-network-gateway"
-  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
-  location            = azurerm_resource_group.myAzureResourceGroup2.location
-  gateway_address     = "145.43.244.136"
-  address_space       = ["10.0.0.0/16"]
-}
-*/
-
-resource "azurerm_public_ip" "myAzurePublicIP" {
-  for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
-  
-  name                = "${each.key}-vpngateway-ip-test"
-  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
-  #resource_group_name = module.resource_group[each.value.hub].name
-  location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
-  allocation_method   = "Static"
-  zones         = [1, 2, 3]
-  tags = {
-    environment = "Production"
-  }
-}
-
 resource "azurerm_local_network_gateway" "gateway" {
   for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
   
@@ -118,6 +87,36 @@ resource "azurerm_public_ip" "vpngateway" {
                                               ***
                                             ***)
                                             */
+
+############################################################################################################################
+resource "azurerm_resource_group" "myAzureResourceGroup2" {
+  name     = "shared-expressroute-prod-uksouth-dataservices-nonprod-test"
+  location = var.location
+}
+
+/*
+resource "azurerm_local_network_gateway" "myAzureLocalNetworkGateway" {
+  name                = "145.43.244.136-dataservices-nonprod-uksouth-local-network-gateway"
+  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
+  location            = azurerm_resource_group.myAzureResourceGroup2.location
+  gateway_address     = "145.43.244.136"
+  address_space       = ["10.0.0.0/16"]
+}
+*/
+
+resource "azurerm_public_ip" "myAzurePublicIP" {
+  for_each = { for key, value in local.vpn_gateway_ranges_map : key => value }
+  
+  name                = "${each.key}-vpngateway-ip-test"
+  resource_group_name = azurerm_resource_group.myAzureResourceGroup2.name
+  #resource_group_name = module.resource_group[each.value.hub].name
+  location            = module.metadata[each.value.hub].location                  #each.value.hub = "dataservices-nonprod-uksouth"
+  allocation_method   = "Static"
+  zones         = [1, 2, 3]
+  tags = {
+    environment = "Production"
+  }
+}
 
 ###########################################################################
 
