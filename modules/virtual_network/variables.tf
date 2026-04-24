@@ -9,6 +9,7 @@ variable "resource_group_name" {
   description = "Resource group name"
   type        = string
 }
+*/
 
 variable "use_product_name" {
   description = "use product_name as prefix for VNET resource"
@@ -16,6 +17,7 @@ variable "use_product_name" {
   default     = false
 }
 
+/*
 variable "location" {
   description = "Azure Region"
   type        = string
