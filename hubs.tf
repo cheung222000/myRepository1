@@ -78,4 +78,7 @@ module "virtual_network" {
   location            = module.metadata[each.key].location
   names               = module.metadata[each.key].names
   tags                = module.metadata[each.key].tags
+
+  address_space        = [each.value.hub_range]
+  enforce_subnet_names = false
 }
