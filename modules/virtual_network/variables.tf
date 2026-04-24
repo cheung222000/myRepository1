@@ -54,7 +54,6 @@ variable "dns_servers" {
   default     = null
 }
 
-/*
 variable "subnets" {
   description = "Map of subnets. Keys are subnet names, Allowed values are the same as for subnet_defaults"
   type        = any
@@ -71,6 +70,7 @@ variable "subnets" {
   }
 }
 
+/*
 variable "aks_subnets" {
   description = "AKS subnets"
   type = map(object({
