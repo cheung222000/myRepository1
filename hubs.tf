@@ -81,4 +81,44 @@ module "virtual_network" {
 
   address_space        = [each.value.hub_range]
   enforce_subnet_names = false
+/*
+  subnets = {
+    "GatewaySubnet" = {
+      cidrs                                         = [local.hub_cidrs[each.key].subnets[0]]
+      create_network_security_group                 = false
+      private_endpoint_network_policies_enabled     = true
+      private_link_service_network_policies_enabled = true
+    },
+    "AzureFirewallSubnet" = {
+      cidrs                                         = [local.hub_cidrs[each.key].subnets[1]]
+      create_network_security_group                 = false
+      private_endpoint_network_policies_enabled     = true
+      private_link_service_network_policies_enabled = true
+    },
+    "PrivateResolverInbound" = {
+      cidrs                                         = [local.hub_cidrs[each.key].subnets[2]]
+      create_network_security_group                 = false
+      private_endpoint_network_policies_enabled     = true
+      private_link_service_network_policies_enabled = true
+      delegations = {
+        "dnsResolvers" = {
+          name    = "Microsoft.Network/dnsResolvers"
+          actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+        }
+      }
+    },
+    "PrivateResolverOutbound" = {
+      cidrs                                         = [local.hub_cidrs[each.key].subnets[3]]
+      create_network_security_group                 = false
+      private_endpoint_network_policies_enabled     = true
+      private_link_service_network_policies_enabled = true
+      delegations = {
+        "dnsResolvers" = {
+          name    = "Microsoft.Network/dnsResolvers"
+          actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
+        }
+      }
+    }
+  }
+*/
 }
