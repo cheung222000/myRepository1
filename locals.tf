@@ -288,7 +288,8 @@ vpn_gateway_ranges_map = tomap({ for r in local.vpn_gateway_ranges : "${r.primar
 
 output "hub_data_debug" {
   #value = module.metadata["dataservices-nonprod-uksouth"]
-  value = local.hubs
+  #value = local.hubs
+  value = local.hub_cidrs
 }
 
 output "hub_data_debug2" {
