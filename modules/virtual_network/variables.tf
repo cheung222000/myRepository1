@@ -32,6 +32,7 @@ variable "tags" {
   description = "Tags to be applied to resources"
   type        = map(string)
 }
+*/
 
 variable "naming_rules" {
   description = "naming conventions yaml file"
@@ -45,6 +46,7 @@ variable "enforce_subnet_names" {
   default     = true
 }
 
+/*
 # Networking
 variable "address_space" {
   description = "CIDRs for virtual network"
