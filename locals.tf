@@ -122,6 +122,8 @@ hub_names = tolist([for key, value in local.hubs : key])
                                             ])
                                             */
 
+hub_cidrs = { for k, v in local.hubs : k => merge(v, { "subnets" : cidrsubnets(v.hub_range, 2, 2, 4, 4, 4) }) }
+
 vpn_connections = { for key, value in local.hubs : key => value if lookup(value, "vpn", null) != null }
 
                                             #if "vpn" found, keep it.
