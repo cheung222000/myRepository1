@@ -74,7 +74,7 @@ module "virtual_network" {
   source   = "./modules/virtual_network"
   for_each = local.hubs
 
-  resource_group_name = module.resource_group[each.key].name
+  resource_group_name = module.resource_group[each.key].name              #each.key = dataservices-nonprod-uksouth
   location            = module.metadata[each.key].location
   names               = module.metadata[each.key].names
   tags                = module.metadata[each.key].tags
