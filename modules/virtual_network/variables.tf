@@ -15,7 +15,6 @@ variable "use_product_name" {
   default     = false
 }
 
-/*
 variable "location" {
   description = "Azure Region"
   type        = string
@@ -30,7 +29,6 @@ variable "tags" {
   description = "Tags to be applied to resources"
   type        = map(string)
 }
-*/
 
 variable "naming_rules" {
   description = "naming conventions yaml file"
