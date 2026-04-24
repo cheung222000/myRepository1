@@ -124,6 +124,41 @@ hub_names = tolist([for key, value in local.hubs : key])
 
 hub_cidrs = { for k, v in local.hubs : k => merge(v, { "subnets" : cidrsubnets(v.hub_range, 2, 2, 4, 4, 4) }) }
 
+                                            /*
+                                              "dataservices-nonprod-uksouth" = ***
+                                                "client_ranges" = [
+                                                  "10.73.64.0/18",
+                                                ]
+                                                "firewall_sku" = "Premium"
+                                                "hub_range" = "10.241.38.0/24"
+                                                "name" = "dataservices-nonprod"
+                                                "region" = "uksouth"
+                                                "subnets" = tolist([
+                                                  "10.241.38.0/26",
+                                                  "10.241.38.64/26",
+                                                  "10.241.38.128/28",
+                                                  "10.241.38.144/28",
+                                                  "10.241.38.160/28",
+                                                ])
+                                                "vpn" = ***
+                                                  "asn" = 64562
+                                                  "bgp_addresses" = [
+                                                    "169.254.21.15",
+                                                    "169.254.22.15",
+                                                    "169.254.21.14",
+                                                    "169.254.22.14",
+                                                  ]
+                                                  "gateway_traffic" = [
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
+                                                  ]
+                                                  "ranges" = [
+                                                    "10.55.208.0/21",
+                                                  ]
+                                                  "sku" = "VpnGw2AZ"
+                                                ***
+                                            */
+
 vpn_connections = { for key, value in local.hubs : key => value if lookup(value, "vpn", null) != null }
 
                                             #if "vpn" found, keep it.
