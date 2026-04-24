@@ -73,4 +73,6 @@ module "resource_group" {
 module "virtual_network" {
   source   = "./modules/virtual_network"
   for_each = local.hubs
+
+  resource_group_name = module.resource_group[each.key].name
 }
