@@ -33,6 +33,8 @@ module "resource_group" {
                                                             location          = var.location           //uksouth
                                                             market            = var.market             //us
                                                             subscription_type = var.subscription_type  //production
+                                                          }
+                                                        )
                                                       */
 }
 
