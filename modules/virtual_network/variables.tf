@@ -4,12 +4,10 @@ variable "virtual_network_name" {
   default     = null
 }
 
-/*
 variable "resource_group_name" {
   description = "Resource group name"
   type        = string
 }
-*/
 
 variable "use_product_name" {
   description = "use product_name as prefix for VNET resource"
