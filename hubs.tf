@@ -38,10 +38,6 @@ module "resource_group" {
                                                       */
 }
 
-module "virtual_network" {
-  source   = "./modules/virtual_network"
-}
-
 /*output "current_subscription_id" {
   value = nonsensitive(data.azurerm_subscription.current.subscription_id)
   #sensitive = false
@@ -73,3 +69,7 @@ module "virtual_network" {
                                                 ]
                                                 "sku" = "VpnGw2AZ"
                                             */
+
+module "virtual_network" {
+  source   = "./modules/virtual_network"
+}
