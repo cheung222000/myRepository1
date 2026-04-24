@@ -42,13 +42,11 @@ variable "enforce_subnet_names" {
   default     = true
 }
 
-/*
 # Networking
 variable "address_space" {
   description = "CIDRs for virtual network"
   type        = list(string)
 }
-*/
 
 variable "dns_servers" {
   description = "If applicable, a list of custom DNS servers to use inside your virtual network.  Unset will use default Azure-provided resolver"
