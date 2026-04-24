@@ -92,7 +92,7 @@ resource "azurerm_public_ip" "vpngateway" {
 resource "azurerm_virtual_network_gateway" "gateway_hub" {
   for_each = local.vpn_connections
 
-  name                = "${each.key}-virtual-network-gateway"
+  name                = "${each.key}-virtual-network-gateway"              #${each.key) = 'dataservices-nonprod-uksouth'
   location            = module.metadata[each.key].location
   resource_group_name = module.resource_group[each.key].name
   tags                = module.metadata[each.key].tags
@@ -137,7 +137,7 @@ resource "azurerm_virtual_network_gateway" "gateway_hub" {
 */
 
                                             /*
-                                              "dataservices-nonprod-uksouth" = ***    #become value ("name" = "dataservices-nonprod")
+                                              "dataservices-nonprod-uksouth" = ***
                                                 "client_ranges" = [
                                                   "10.73.64.0/18",
                                                 ]
@@ -154,8 +154,8 @@ resource "azurerm_virtual_network_gateway" "gateway_hub" {
                                                     "169.254.22.14",
                                                   ]
                                                   "gateway_traffic" = [
-                                                    "145.43.244.136",                  #become value ("primary_ip" = "145.43.244.136")
-                                                    "145.43.244.168",                  #become value ("primary_ip" = "145.43.244.168")
+                                                    "145.43.244.136",
+                                                    "145.43.244.168",
                                                   ]
                                                   "ranges" = [
                                                     "10.55.208.0/21",
