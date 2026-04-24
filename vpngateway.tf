@@ -89,6 +89,55 @@ resource "azurerm_public_ip" "vpngateway" {
                                             */
 
 /*
+resource "azurerm_virtual_network_gateway" "gateway_hub" {
+  for_each = local.vpn_connections
+
+  name                = "${each.key}-virtual-network-gateway"
+  location            = module.metadata[each.key].location
+  resource_group_name = module.resource_group[each.key].name
+  tags                = module.metadata[each.key].tags
+  type                = "Vpn"
+  vpn_type            = "RouteBased"
+
+  active_active = true
+  enable_bgp    = true
+
+  generation = "Generation2"
+
+  sku = each.value.vpn.sku
+
+  bgp_settings {
+    asn = each.value.vpn.asn
+
+    peering_addresses {
+      ip_configuration_name = "gateway-config-0"
+      apipa_addresses       = [each.value.vpn.bgp_addresses[0], each.value.vpn.bgp_addresses[1]]
+    }
+
+    peering_addresses {
+      ip_configuration_name = "gateway-config-1"
+      apipa_addresses       = [each.value.vpn.bgp_addresses[2], each.value.vpn.bgp_addresses[3]]
+    }
+  }
+
+  ip_configuration {
+    name                          = "gateway-config-0"
+    public_ip_address_id          = azurerm_public_ip.vpngateway["${each.value.vpn.gateway_traffic[0]}-${each.key}"].id
+    private_ip_address_allocation = "Dynamic"
+    subnet_id                     = module.virtual_network[each.key].subnet["GatewaySubnet"].id
+  }
+
+  ip_configuration {
+    name                          = "gateway-config-1"
+    public_ip_address_id          = azurerm_public_ip.vpngateway["${each.value.vpn.gateway_traffic[1]}-${each.key}"].id
+    private_ip_address_allocation = "Dynamic"
+    subnet_id                     = module.virtual_network[each.key].subnet["GatewaySubnet"].id
+  }
+}
+*/
+
+
+/*
 resource "azurerm_virtual_network_gateway" "myAzureVirtualNetworkGateway" {
   name                = "dataservices-nonprod-uksouth-virtual-network-gateway"
   location            = azurerm_resource_group.myAzureResourceGroup2.location
