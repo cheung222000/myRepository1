@@ -122,7 +122,7 @@ hub_names = tolist([for key, value in local.hubs : key])
                                             ])
                                             */
 
-hub_cidrs = { for k, v in local.hubs : k => merge(v, { "subnets" : cidrsubnets(v.hub_range, 2, 2, 4, 4, 4) }) }
+hub_cidrs = { for k, v in local.hubs : k => merge(v, { "subnets" : cidrsubnets(v.hub_range, 2, 2, 4, 4, 4) }) }              #based on "hub_range" = "10.241.38.0/24", add "subnets"
 
                                             /*
                                               "dataservices-nonprod-uksouth" = ***
