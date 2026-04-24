@@ -52,6 +52,7 @@ variable "address_space" {
   description = "CIDRs for virtual network"
   type        = list(string)
 }
+*/
 
 variable "dns_servers" {
   description = "If applicable, a list of custom DNS servers to use inside your virtual network.  Unset will use default Azure-provided resolver"
@@ -59,6 +60,7 @@ variable "dns_servers" {
   default     = null
 }
 
+/*
 variable "subnets" {
   description = "Map of subnets. Keys are subnet names, Allowed values are the same as for subnet_defaults"
   type        = any
