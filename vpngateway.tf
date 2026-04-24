@@ -122,7 +122,7 @@ resource "azurerm_virtual_network_gateway" "gateway_hub" {
 
   ip_configuration {
     name                          = "gateway-config-0"
-    public_ip_address_id          = azurerm_public_ip.vpngateway["${each.value.vpn.gateway_traffic[0]}-${each.key}"].id
+    public_ip_address_id          = azurerm_public_ip.vpngateway["${each.value.vpn.gateway_traffic[0]}-${each.key}"].id              # ${each.value.vpn.gateway_traffic[0]}-${each.key} = '145.43.244.136-dataservices-nonprod-uksouth'
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = module.virtual_network[each.key].subnet["GatewaySubnet"].id
   }
