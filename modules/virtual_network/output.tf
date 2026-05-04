@@ -1,4 +1,5 @@
 ##
+/*
 output "subnet" {
   description = "Map of subnet data objects."
   value = zipmap(
@@ -6,3 +7,4 @@ output "subnet" {
     [for subnet in module.subnet : subnet.subnet]
   )
 }
+*/
