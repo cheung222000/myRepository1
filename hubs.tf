@@ -81,7 +81,7 @@ module "virtual_network" {
 
   address_space        = [each.value.hub_range]
   enforce_subnet_names = false
-///*
+
   subnets = {
     "GatewaySubnet" = {
       cidrs                                         = [local.hub_cidrs[each.key].subnets[0]]
@@ -120,5 +120,5 @@ module "virtual_network" {
       }
     }
   }
-//*/
+
 }
