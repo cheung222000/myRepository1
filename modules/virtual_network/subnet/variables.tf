@@ -46,6 +46,7 @@ variable "cidrs" {
   description = "CIDRs for subnet"
   type        = list(string)
 }
+*/
 
 variable "create_network_security_group" {
   description = "Create/associate network security group"
@@ -122,4 +123,4 @@ variable "security_group_prefix" {
   type        = string
   default     = null
 }
-*/
+
