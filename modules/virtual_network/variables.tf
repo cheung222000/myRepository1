@@ -70,7 +70,7 @@ variable "subnets" {
   }
 }
 
-/*
+
 variable "aks_subnets" {
   description = "AKS subnets"
   type = map(object({
@@ -121,7 +121,7 @@ variable "subnet_defaults" {
     route_table_association                       = null
   }
 }
-
+/*
 variable "route_tables" {
   description = "Maps of route tables"
   type = map(object({
