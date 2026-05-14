@@ -18,7 +18,7 @@ variable "tags" {
   description = "tags to be applied to resources"
   type        = map(string)
 }
-
+*/
 variable "naming_rules" {
   description = "naming conventions yaml file"
   type        = string
@@ -30,7 +30,7 @@ variable "enforce_subnet_names" {
   type        = bool
   default     = false
 }
-
+/*
 # Networking
 variable "virtual_network_name" {
   description = "virtual network name"
