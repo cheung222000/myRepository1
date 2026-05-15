@@ -60,7 +60,7 @@ variable "subnets" {
   default     = {}
 
   validation {
-    condition = (length(compact([for subnet in var.subnets : (!lookup(subnet, "configure_nsg_rules", true) &&
+    condition = (length(compact([for subnet in var.subnets : (!lookup(subnet, "configure_nsg_rules", true) &&			#check every single subnet #configure_nsg_rules default true #!configure_nsg_rules && any NSG rule parameters -> invalid
       (contains(keys(subnet), "allow_internet_outbound") ||
         contains(keys(subnet), "allow_lb_inbound") ||
         contains(keys(subnet), "allow_vnet_inbound") ||
@@ -69,6 +69,31 @@ variable "subnets" {
     error_message = "Subnet rules not allowed when configure_nsg_rules is set to \"false\"."
   }
 }
+
+/*
+OK!
+subnets = {
+  GatewaySubnet = {
+    address_prefix = "10.0.0.0/27"
+    allow_vnet_inbound = true <<<<<<<<<<<<
+  }
+}
+subnets = {
+  GatewaySubnet = {
+    address_prefix = "10.0.0.0/27"
+    configure_nsg_rules = false <<<<<<<<<<<<
+  }
+
+
+NOT OK!
+subnets = {
+  GatewaySubnet = {
+    address_prefix = "10.0.0.0/27"
+    configure_nsg_rules = false <<<<<<<<<<<<
+    allow_vnet_inbound = true <<<<<<<<<<<<
+  }
+}
+*/
 
 
 variable "aks_subnets" {
