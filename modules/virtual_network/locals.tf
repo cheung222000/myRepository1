@@ -2,7 +2,6 @@ locals {
   subnets = zipmap(keys(var.subnets), [for subnet in values(var.subnets) : merge(var.subnet_defaults, subnet)])
 
 /*
-
   "GatewaySubnet" = {
     cidrs                                         	= [local.hub_cidrs[each.key].subnets[0]]
     create_network_security_group                 	= false
