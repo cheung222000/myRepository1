@@ -1,3 +1,46 @@
 locals {
   subnets = zipmap(keys(var.subnets), [for subnet in values(var.subnets) : merge(var.subnet_defaults, subnet)])
+
+/*
+
+  "GatewaySubnet" = {
+    cidrs                                         	= [local.hub_cidrs[each.key].subnets[0]]
+    create_network_security_group                 	= false
+    private_endpoint_network_policies_enabled     	= true
+    private_link_service_network_policies_enabled 	= true
+  }
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  default = {
+    cidrs                                         = []
+    private_endpoint_network_policies             = "Disabled"
+    private_link_service_network_policies_enabled = true
+    service_endpoints                             = []
+    delegations                                   = {}
+    create_network_security_group                 = true
+    security_group_prefix                         = null
+    configure_nsg_rules                           = true
+    allow_internet_outbound                       = false
+    allow_lb_inbound                              = false
+    allow_vnet_inbound                            = false
+    allow_vnet_outbound                           = false
+    route_table_association                       = null
+  }
+  VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+    "GatewaySubnet" = {
+    cidrs                                         = [local.hub_cidrs[each.key].subnets[0]]
+    private_endpoint_network_policies             = "Disabled"
+    private_link_service_network_policies_enabled = true
+    service_endpoints                             = []
+    delegations                                   = {}
+    create_network_security_group                 = true
+    create_network_security_group                 = false
+    configure_nsg_rules                           = true
+    allow_internet_outbound                       = false
+    allow_lb_inbound                              = false
+    allow_vnet_inbound                            = false
+    allow_vnet_outbound                           = false
+    route_table_association                       = null
+    }
+*/
+
 }
