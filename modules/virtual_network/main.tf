@@ -11,9 +11,9 @@ module "subnet" {
   tags                 = var.tags
 
   naming_rules         = var.naming_rules
-  enforce_subnet_names = local.enforce_subnet_names
+/*  enforce_subnet_names = local.enforce_subnet_names
 
-/*  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
   subnet_type          = each.key
   cidrs                = each.value.cidrs
 
