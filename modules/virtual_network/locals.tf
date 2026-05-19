@@ -43,5 +43,7 @@ locals {
 */
 
   enforce_subnet_names = (var.naming_rules == "" ? false : var.enforce_subnet_names)
+  #enforce_subnet_names = false (if var.naming_rules == "")
+  #OR enforce_subnet_names = var.enforce_subnet_names (var.naming_rules != "")
 
 }
