@@ -42,4 +42,6 @@ locals {
     }
 */
 
+  enforce_subnet_names = (var.naming_rules == "" ? false : var.enforce_subnet_names)
+
 }
