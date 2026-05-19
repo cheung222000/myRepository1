@@ -1,5 +1,9 @@
 locals {
   virtual_network_name = (var.virtual_network_name != null && var.virtual_network_name != "" ? var.virtual_network_name : (var.use_product_name ? "${var.names.product_name}-${var.names.subscription_type}-${var.names.location}-vnet" : "${var.names.product_group}-${var.names.subscription_type}-${var.names.location}-vnet"))
+#If virtual_network_name has value, just use it.
+#OR If use_product_name is TRUE, then use "${var.names.product_name}-${var.names.subscription_type}-${var.names.location}-vnet"
+#OR If use_product_name is FALSE, then use "${var.names.product_group}-${var.names.subscription_type}-${var.names.location}-vnet"
+
   subnets = zipmap(keys(var.subnets), [for subnet in values(var.subnets) : merge(var.subnet_defaults, subnet)])
 
 /*
