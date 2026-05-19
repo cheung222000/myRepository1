@@ -1,6 +1,5 @@
 #https://github.com/Azure-Terraform/terraform-azurerm-virtual-network.git?ref=v8.1.0
 
-/*
 resource "azurerm_virtual_network" "vnet" {
   name                = local.virtual_network_name
   location            = var.location
@@ -9,7 +8,6 @@ resource "azurerm_virtual_network" "vnet" {
   tags                = var.tags
   dns_servers         = var.dns_servers
 }
-*/
 
 module "subnet" {
   source   = "./subnet"
