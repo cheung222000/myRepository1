@@ -23,8 +23,8 @@ module "subnet" {
   enforce_subnet_names = local.enforce_subnet_names
 
   virtual_network_name = azurerm_virtual_network.vnet.name
-/*  subnet_type          = each.key
-  cidrs                = each.value.cidrs
+  subnet_type          = each.key
+/*  cidrs                = each.value.cidrs
 
   private_endpoint_network_policies             = each.value.private_endpoint_network_policies
   private_link_service_network_policies_enabled = each.value.private_link_service_network_policies_enabled
