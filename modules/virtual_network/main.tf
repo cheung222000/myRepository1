@@ -30,8 +30,8 @@ module "subnet" {
   private_link_service_network_policies_enabled = each.value.private_link_service_network_policies_enabled
   # default_outbound_access_enabled               = each.value.default_outbound_access_enabled
 
-/*  service_endpoints = each.value.service_endpoints
-  delegations       = each.value.delegations
+  service_endpoints = each.value.service_endpoints
+/*  delegations       = each.value.delegations
 
   create_network_security_group = each.value.create_network_security_group
   security_group_prefix         = each.value.security_group_prefix
