@@ -41,12 +41,11 @@ variable "subnet_type" {
   description = "subnet type"
   type        = string
 }
-/*
+
 variable "cidrs" {
   description = "CIDRs for subnet"
   type        = list(string)
 }
-*/
 
 variable "create_network_security_group" {
   description = "Create/associate network security group"
