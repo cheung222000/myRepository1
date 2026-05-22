@@ -31,7 +31,7 @@ module "subnet" {
   # default_outbound_access_enabled               = each.value.default_outbound_access_enabled
 
   service_endpoints = each.value.service_endpoints
-/*  delegations       = each.value.delegations
+  delegations       = each.value.delegations
 
   create_network_security_group = each.value.create_network_security_group
   security_group_prefix         = each.value.security_group_prefix
@@ -40,7 +40,7 @@ module "subnet" {
   allow_lb_inbound              = each.value.allow_lb_inbound
   allow_vnet_inbound            = each.value.allow_vnet_inbound
   allow_vnet_outbound           = each.value.allow_vnet_outbound
-*/
+/* */
 }
 
 /*
