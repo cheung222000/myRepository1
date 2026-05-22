@@ -36,12 +36,12 @@ variable "virtual_network_name" {
   description = "virtual network name"
   type        = string
 }
-/*
+
 variable "subnet_type" {
   description = "subnet type"
   type        = string
 }
-
+/*
 variable "cidrs" {
   description = "CIDRs for subnet"
   type        = list(string)
