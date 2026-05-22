@@ -30,13 +30,13 @@ variable "enforce_subnet_names" {
   type        = bool
   default     = false
 }
-/*
+
 # Networking
 variable "virtual_network_name" {
   description = "virtual network name"
   type        = string
 }
-
+/*
 variable "subnet_type" {
   description = "subnet type"
   type        = string
