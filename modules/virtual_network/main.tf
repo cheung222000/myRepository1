@@ -40,7 +40,7 @@ module "subnet" {
   allow_lb_inbound              = each.value.allow_lb_inbound
   allow_vnet_inbound            = each.value.allow_vnet_inbound
   allow_vnet_outbound           = each.value.allow_vnet_outbound
-/* */
+
 }
 
 /*
