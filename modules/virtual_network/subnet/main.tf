@@ -31,7 +31,7 @@ resource "azurerm_subnet_network_security_group_association" "subnet_nsg" {
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.nsg.0.id
 }
-
+*/
 resource "azurerm_network_security_group" "nsg" {
   count = (var.create_network_security_group ? 1 : 0)
 
@@ -40,7 +40,7 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = var.resource_group_name
   tags                = merge(var.tags, { subnet_type = lookup(local.allowed_subnet_info, var.subnet_type, var.subnet_type) })
 }
-
+/*
 resource "azurerm_network_security_rule" "deny_all_inbound" {
   count = ((var.create_network_security_group && var.configure_nsg_rules) ? 1 : 0)
 
