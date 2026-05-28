@@ -57,7 +57,7 @@ resource "azurerm_network_security_rule" "deny_all_inbound" {
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.nsg.0.name
 }
-/*
+
 resource "azurerm_network_security_rule" "deny_all_outbound" {
   count = ((var.create_network_security_group && var.configure_nsg_rules) ? 1 : 0)
 
@@ -137,4 +137,4 @@ resource "azurerm_network_security_rule" "allow_vnet_outbound" {
   resource_group_name         = var.resource_group_name
   network_security_group_name = azurerm_network_security_group.nsg.0.name
 }
-*/
+
