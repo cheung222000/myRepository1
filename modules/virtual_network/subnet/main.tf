@@ -24,14 +24,12 @@
   }
 }
 
-/*
 resource "azurerm_subnet_network_security_group_association" "subnet_nsg" {
   count = (var.create_network_security_group ? 1 : 0)
 
   subnet_id                 = azurerm_subnet.subnet.id
   network_security_group_id = azurerm_network_security_group.nsg.0.id
 }
-*/
 
 resource "azurerm_network_security_group" "nsg" {
   count = (var.create_network_security_group ? 1 : 0)
