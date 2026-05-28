@@ -87,8 +87,8 @@ resource "azurerm_public_ip" "vpngateway" {
                                               ***
                                             ***)
                                             */
+#####
 
-/*
 resource "azurerm_virtual_network_gateway" "gateway_hub" {
   for_each = local.vpn_connections
 
@@ -134,7 +134,7 @@ resource "azurerm_virtual_network_gateway" "gateway_hub" {
     subnet_id                     = module.virtual_network[each.key].subnet["GatewaySubnet"].id
   }
 }
-*/
+
 
                                             /*
                                               "dataservices-nonprod-uksouth" = ***
